@@ -1,0 +1,21 @@
+
+<h1><%= @cocktail.name %></h1>
+
+<div class='container'>
+  <div class="row">
+      <% @cocktail.doses.each do |dose| %>
+       <p> description : <%= dose.description %> </p>
+       <p> ingredient : <%= dose.ingredient.name %> </p>
+
+      <hp><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>
+      Delete'.html_safe, dose_path(dose),
+      method: :delete,
+      data: { confirm: 'are you sure?'},class: "btn btn-primary"%> </p>
+ <% end %>
+ </div>
+</div>
+
+<div class="links">
+<%= link_to "Get back to the list", cocktails_path %>
+<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail)%>
+</div>
