@@ -1,14 +1,15 @@
 
 
-<h1>Cocktails </h1>
 
 
 <div class='container'>
 
   <div class="row">
+
+    <h1>Cocktails </h1>
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://fthmb.tqn.com/pngsFE0xnh6WsIk5SOBYhVJftkU=/2001x1498/filters:fill(auto,1)/alcohol-cocktails-58110d6b3df78c2c7317ba36.jpg');">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>');">
         <%= link_to "", cocktail_path(cocktail), class: 'card-link'%>
         <div class="card-category">Popular</div>
         <div class="card-description">
